@@ -1,0 +1,45 @@
+.IContainer {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  right: 3vw;
+}
+
+.inner {
+  background: rgb(78, 83, 82);
+  padding: 0.8em;
+  border-radius: 15px;
+  width: 250px;
+  clip-path: circle(10% at 90% 20%);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    clip-path: circle(75%);
+    background: #e3e7e9;
+  }
+
+  span {
+    float: right;
+    color: white;
+    font-weight: bold;
+    transition: color 0.5s;
+    position: relative;
+    margin-right: 4%;
+    font-size: larger;
+  }
+
+  &:hover span {
+    color: rgba(255, 255, 255, 0);
+  }
+
+  h2 {
+    color: rgb(27, 27, 27);
+    margin: 0;
+  }
+
+  p {
+    color: rgb(27, 27, 27);
+    font-size: 0.8rem;
+  }
+}

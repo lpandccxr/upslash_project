@@ -1,0 +1,9 @@
+.container {
+  position: relative;
+  margin: 130px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-between;
+  flex-wrap: wrap;
+  height: fit-content;
+}

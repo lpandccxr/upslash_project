@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+// import SearchBar from "./components/SeachBar";
+import PhotoContainer from "./components/PhotoContainer";
+import { PhotoProvider } from "./components/PhotoContext";
+import Header from "./components/Header";
+import Information from "./components/Information";
 
-function App() {
+import "./style/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Axios from "axios";
+
+export default function App() {
+  const [bgPhoto, setBgPhoto] = useState("");
+
+  useEffect(() => {
+    Axios.get(
+      "https://api.unsplash.com/photos/random?client_id=IWWNwZPPkgOp6WUzkA1hW4ejKlaDtfg-ras8c9Rr-44"
+    )
+      .then((res) => {
+        //console.log(res.data);
+        setBgPhoto(res.data.urls.full);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PhotoProvider>
+      <div className="App">
+        <Header />
+        <PhotoContainer />
+        <Information />
+      </div>
+    </PhotoProvider>
   );
 }
-
-export default App;

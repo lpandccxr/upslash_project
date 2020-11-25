@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,UAAU;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;EAC7B,aAAa,EAAE,aAAa;EAC5B,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,WAAW;CACpB",
+    "sources": [
+        "PhotoContainer.scss"
+    ],
+    "names": [],
+    "file": "PhotoContainer.css"
+}

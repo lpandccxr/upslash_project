@@ -1,0 +1,50 @@
+.IContainer {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  right: 3vw;
+}
+
+.inner {
+  background: #4e5352;
+  padding: 0.8em;
+  border-radius: 15px;
+  width: 250px;
+  -webkit-clip-path: circle(10% at 90% 20%);
+          clip-path: circle(10% at 90% 20%);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.inner:hover {
+  -webkit-clip-path: circle(75%);
+          clip-path: circle(75%);
+  background: #e3e7e9;
+}
+
+.inner span {
+  float: right;
+  color: white;
+  font-weight: bold;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  position: relative;
+  margin-right: 4%;
+  font-size: larger;
+}
+
+.inner:hover span {
+  color: rgba(255, 255, 255, 0);
+}
+
+.inner h2 {
+  color: #1b1b1b;
+  margin: 0;
+}
+
+.inner p {
+  color: #1b1b1b;
+  font-size: 0.8rem;
+}
+/*# sourceMappingURL=Information.css.map */

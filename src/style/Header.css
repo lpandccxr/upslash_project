@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+.header {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: whitesmoke;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100vw;
+  border: 1px solid #1d1919;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.header__icon {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4a/Unsplash_wordmark_logo.svg");
+  width: 200px;
+  height: 50px;
+  display: block;
+  background-repeat: no-repeat;
+  margin: 30px;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/*# sourceMappingURL=Header.css.map */
