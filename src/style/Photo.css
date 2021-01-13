@@ -55,4 +55,11 @@
   bottom: 0;
   font-size: small;
 }
+
+.photo__icon {
+  border-radius: 50%;
+  border: 2px solid white;
+  position: absolute;
+  right: 10px;
+}
 /*# sourceMappingURL=Photo.css.map */

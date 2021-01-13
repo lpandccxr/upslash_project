@@ -49,4 +49,12 @@
     bottom: 0;
     font-size: small;
   }
+
+  &__icon {
+    border-radius: 50%;
+    border: 2px solid white;
+
+    position: absolute;
+    right: 10px;
+  }
 }

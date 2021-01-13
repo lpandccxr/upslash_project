@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { PhotoContext } from "./PhotoContext";
 import Photo from "./Photo";
-import { CardDeck } from "react-bootstrap";
+//import { CardDeck } from "react-bootstrap";
 import "../style/PhotoContainer.css";
 
 export default function PhotoContainer() {
@@ -16,6 +16,9 @@ export default function PhotoContainer() {
           url={pic.urls.small}
           alt_dec={pic.alt_description}
           dec={pic.description}
+          upic={pic.user.profile_image.small}
+          uurl={pic.user.links.html}
+          uname={pic.user.username}
           key={pic.id}
         />
       ))}
