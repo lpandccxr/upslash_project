@@ -11,3 +11,4 @@ export function PhotoProvider(props) {
     </PhotoContext.Provider>
   );
 }
+

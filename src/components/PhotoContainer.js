@@ -7,7 +7,7 @@ import "../style/PhotoContainer.css";
 export default function PhotoContainer() {
   // eslint-disable-next-line
   const [photos, setPhotos] = useContext(PhotoContext);
-  console.log(photos);
+ // console.log(photos);
 
   return (
     <div className="container">
@@ -16,7 +16,7 @@ export default function PhotoContainer() {
           url={pic.urls.small}
           alt_dec={pic.alt_description}
           dec={pic.description}
-          upic={pic.user.profile_image.small}
+          upic={pic.user.profile_image.medium}
           uurl={pic.user.links.html}
           uname={pic.user.username}
           key={pic.id}

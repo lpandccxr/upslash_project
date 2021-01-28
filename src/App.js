@@ -2,8 +2,11 @@ import React from "react";
 // import SearchBar from "./components/SeachBar";
 import PhotoContainer from "./components/PhotoContainer";
 import { PhotoProvider } from "./components/PhotoContext";
+import { PageProvider } from "./components/PageContext";
+import { KeywordProvider } from "./components/KeywordContext";
 import Header from "./components/Header";
 import Information from "./components/Information";
+import PageButton from "./components/PageButton";
 
 import "./style/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,11 +30,16 @@ export default function App() {
 
   return (
     <PhotoProvider>
-      <div className="App">
-        <Header />
-        <PhotoContainer />
-        <Information />
-      </div>
+      <PageProvider>
+        <KeywordProvider>
+          <div className="App">
+            <Header />
+            <PhotoContainer />
+            <Information />
+            <PageButton />
+          </div>
+        </KeywordProvider>
+      </PageProvider>
     </PhotoProvider>
   );
 }
