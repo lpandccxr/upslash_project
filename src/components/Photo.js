@@ -1,5 +1,4 @@
 import React from "react";
-//import { Card } from "react-bootstrap";
 import "../style/Photo.css";
 
 export default function Photo({ url, alt_dec, dec, upic, uurl, name }) {

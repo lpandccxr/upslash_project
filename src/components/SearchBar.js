@@ -1,49 +1,37 @@
-import React, { useContext } from "react";
-import { PhotoContext } from "./PhotoContext";
-import { PageContext } from "./PageContext";
-import { KeywordContext } from "./KeywordContext";
-import Axios from "axios";
+import React, { useContext, useState, useEffect } from "react";
+import Searching from "./Searching";
+import { PageContext } from "./context/PageContext";
+import { KeywordContext } from "./context/KeywordContext";
+import { PhotoContext } from "./context/PhotoContext";
+import { LoadingContext } from "./context/LoadingContext";
 
 import "../style/SearchBar.css";
 import { CgSearch } from "react-icons/cg";
 
-//import { Button, InputGroup, FormControl } from "react-bootstrap";
-
 export default function SearchBar() {
   // eslint-disable-next-line
-  const [photo, setPhoto] = useContext(PhotoContext);
   const [page, setPage] = useContext(PageContext);
   const [keyWord, setKeyWord] = useContext(KeywordContext);
+  const [photo, setPhoto] = useContext(PhotoContext);
+  const [loading, setLoading] = useContext(LoadingContext);
+  // const { photos, load, more } = Searching(page, keyWord);
 
   const updateSearch = (e) => {
     const word = e.target.value;
-    //console.log(word);
     setKeyWord(word);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    window.scrollTo({ top: 0 });
     setPage(1);
-
-    const url =
-      "https://api.unsplash.com/search/photos?page=" +
-      page +
-      "&per_page=24&query=" +
-      keyWord +
-      "&client_id=IWWNwZPPkgOp6WUzkA1hW4ejKlaDtfg-ras8c9Rr-44";
-
-    //console.log(url);
-
-    Axios.get(url)
-      .then((res) => {
-        console.log(res.data);
-        setPhoto(res.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    setLoading(!loading);
   };
+
+  // useEffect(() => {
+  //   let newPhoto = [...photo, ...photos];
+  //   setPhoto(newPhoto);
+  // }, [photos]);
 
   return (
     <div className="searchBox">
