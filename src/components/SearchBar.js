@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import Searching from "./Searching";
 import { PageContext } from "./context/PageContext";
 import { KeywordContext } from "./context/KeywordContext";
 import { PhotoContext } from "./context/PhotoContext";
@@ -14,7 +13,7 @@ export default function SearchBar() {
   const [keyWord, setKeyWord] = useContext(KeywordContext);
   const [photo, setPhoto] = useContext(PhotoContext);
   const [loading, setLoading] = useContext(LoadingContext);
-  // const { photos, load, more } = Searching(page, keyWord);
+
 
   const updateSearch = (e) => {
     const word = e.target.value;
@@ -27,11 +26,6 @@ export default function SearchBar() {
     setPage(1);
     setLoading(!loading);
   };
-
-  // useEffect(() => {
-  //   let newPhoto = [...photo, ...photos];
-  //   setPhoto(newPhoto);
-  // }, [photos]);
 
   return (
     <div className="searchBox">
