@@ -1,15 +1,17 @@
 import { useState, useEffect, useContext } from "react";
 import { PhotoContext } from "./context/PhotoContext";
-import { LoadingContext } from "./context/LoadingContext";
+import { PageContext } from "./context/PageContext";
+import { KeywordContext } from "./context/KeywordContext";
 import Axios from "axios";
 
-export default function Searching(page, keyWord) {
+export default function Searching() {
   // eslint-disable-next-line
   const [load, setLoad] = useState(true);
   const [more, setMore] = useState(false);
   // const [newPhoto, setNewPhoto] = useState([]);
   const [photo, setPhoto] = useContext(PhotoContext);
-  const [loading, setLoading] = useContext(LoadingContext);
+  const [page, setPage] = useContext(PageContext);
+  const [keyWord, setKeyWord] = useContext(KeywordContext);
 
   const url =
     "https://api.unsplash.com/search/photos?page=" +
@@ -21,7 +23,8 @@ export default function Searching(page, keyWord) {
   useEffect(() => {
     Axios.get(url)
       .then((res) => {
-        if (page == 1) {
+        if (page === 1) {
+          console.log(res.data.results);
           setPhoto(res.data.results);
         } else {
           let newPhoto = [...photo, ...res.data.results];
@@ -34,7 +37,7 @@ export default function Searching(page, keyWord) {
       .catch((error) => {
         console.log(error);
       });
-  }, [page, loading]);
+  }, [page, keyWord]);
 
   return { load, more };
 }

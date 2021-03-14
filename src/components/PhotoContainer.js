@@ -1,7 +1,6 @@
 import React, { useContext, useRef, useCallback } from "react";
 import { PhotoContext } from "./context/PhotoContext";
 import { PageContext } from "./context/PageContext";
-import { KeywordContext } from "./context/KeywordContext";
 import Searching from "./Searching";
 import Photo from "./Photo";
 import "../style/PhotoContainer.css";
@@ -10,8 +9,7 @@ export default function PhotoContainer() {
   // eslint-disable-next-line
   const [photo, setPhotos] = useContext(PhotoContext);
   const [page, setPage] = useContext(PageContext);
-  const [keyWord, setKeyWord] = useContext(KeywordContext);
-  const { load, more } = Searching(page, keyWord);
+  const { load, more } = Searching();
 
   const observer = useRef();
   const lastPhotoElementRef = useCallback((node) => {
@@ -32,7 +30,6 @@ export default function PhotoContainer() {
           return (
             <div ref={lastPhotoElementRef}>
               <Photo
-                reference={null}
                 url={pic.urls.small}
                 alt_dec={pic.alt_description}
                 dec={pic.description}
@@ -46,7 +43,6 @@ export default function PhotoContainer() {
         } else {
           return (
             <Photo
-              reference={null}
               url={pic.urls.small}
               alt_dec={pic.alt_description}
               dec={pic.description}
